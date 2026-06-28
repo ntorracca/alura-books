@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const textoOpcoes = ['CATEGORIAS', 'FAVORITOS', 'MINHA ESTANTE']
 
@@ -22,11 +23,11 @@ const Opcoes = styled.ul
 
 function OpcoesHeader (){
     return (
-        <Opcoes>
-        { textoOpcoes.map( (texto) => (
-          <Opcao><p>{texto}</p></Opcao>))
-        }
-        </Opcoes>
+       <Opcoes>
+           { textoOpcoes.map( (texto) => (
+               <Link to={`/${texto}`} ><Opcao><p>{texto}</p></Opcao></Link>
+           ) ) }
+     </Opcoes>
     )
 }
 
